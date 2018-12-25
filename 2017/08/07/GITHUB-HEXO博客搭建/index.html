@@ -1,0 +1,860 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="GITHUB HEXO博客搭建," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Linux 运维" type="application/atom+xml" />
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.2" />
+
+
+
+
+
+
+<meta name="description" content="HEXO环境配置hexo非常容易安装。然而，在你开始之前需要一些东西。 下载需要安装的程序12http://nodejs.org/http://git-scm.com/ 或许我们还需要一个UTF-8编码的编辑器，因为Editplus编辑的文件都要用utf-8保存。 1http://www.cnblogs.com/hanzisearcher/archive/2012/09/14/editplus.h">
+<meta name="keywords" content="GITHUB HEXO博客搭建">
+<meta property="og:type" content="article">
+<meta property="og:title" content="GITHUB HEXO博客搭建">
+<meta property="og:url" content="http://kaliwifi.com/2017/08/07/GITHUB-HEXO博客搭建/index.html">
+<meta property="og:site_name" content="Linux 运维">
+<meta property="og:description" content="HEXO环境配置hexo非常容易安装。然而，在你开始之前需要一些东西。 下载需要安装的程序12http://nodejs.org/http://git-scm.com/ 或许我们还需要一个UTF-8编码的编辑器，因为Editplus编辑的文件都要用utf-8保存。 1http://www.cnblogs.com/hanzisearcher/archive/2012/09/14/editplus.h">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2017-09-16T05:07:43.388Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="GITHUB HEXO博客搭建">
+<meta name="twitter:description" content="HEXO环境配置hexo非常容易安装。然而，在你开始之前需要一些东西。 下载需要安装的程序12http://nodejs.org/http://git-scm.com/ 或许我们还需要一个UTF-8编码的编辑器，因为Editplus编辑的文件都要用utf-8保存。 1http://www.cnblogs.com/hanzisearcher/archive/2012/09/14/editplus.h">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '5.1.2',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://kaliwifi.com/2017/08/07/GITHUB-HEXO博客搭建/"/>
+
+
+
+
+
+  <title>GITHUB HEXO博客搭建 | Linux 运维</title>
+  
+
+
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?af83084108ef40eb67496bb4725eaa9c";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Linux 运维</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">服务器故障解决</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://kaliwifi.com/2017/08/07/GITHUB-HEXO博客搭建/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="寻味漂漂">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Linux 运维">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">GITHUB HEXO博客搭建</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-08-07T12:11:22+08:00">
+                2017-08-07
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/技术文章/" itemprop="url" rel="index">
+                    <span itemprop="name">技术文章</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="HEXO环境配置"><a href="#HEXO环境配置" class="headerlink" title="HEXO环境配置"></a>HEXO环境配置</h2><p>hexo非常容易安装。然而，在你开始之前需要一些东西。</p>
+<h3 id="下载需要安装的程序"><a href="#下载需要安装的程序" class="headerlink" title="下载需要安装的程序"></a>下载需要安装的程序</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">http://nodejs.org/</div><div class="line">http://git-scm.com/</div></pre></td></tr></table></figure>
+<p>或许我们还需要一个UTF-8编码的编辑器，因为Editplus编辑的文件都要用utf-8保存。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">http://www.cnblogs.com/hanzisearcher/archive/2012/09/14/editplus.html</div></pre></td></tr></table></figure>
+<h3 id="安装HEXO"><a href="#安装HEXO" class="headerlink" title="安装HEXO"></a>安装HEXO</h3><p>桌面右击进入Git Bash：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install -g hexo</div></pre></td></tr></table></figure>
+<p>hexo一旦安装，运行下面的命令Hexo将建立所有你需要的文件，在目标文件夹。<br><a id="more"></a></p>
+<h3 id="新建HEXO博客"><a href="#新建HEXO博客" class="headerlink" title="新建HEXO博客"></a>新建HEXO博客</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">hexo init kaliwifi</div><div class="line"><span class="built_in">cd</span> kaliwifi</div><div class="line">npm install</div></pre></td></tr></table></figure>
+<p>经过建设，这里就是项目文件夹看起来像这样子：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">.</div><div class="line">├── _config.yml</div><div class="line">├── package.json</div><div class="line">├── scaffolds</div><div class="line">├── scripts</div><div class="line">├── <span class="built_in">source</span></div><div class="line">| ├── _drafts</div><div class="line">| └── _posts</div><div class="line">└── themes</div></pre></td></tr></table></figure>
+<h3 id="配置GITHUB"><a href="#配置GITHUB" class="headerlink" title="配置GITHUB"></a>配置GITHUB</h3><p>先到github网站注册帐号：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">https://github.com/</div></pre></td></tr></table></figure>
+<h4 id="查看是否有SSH秘钥"><a href="#查看是否有SSH秘钥" class="headerlink" title="查看是否有SSH秘钥"></a>查看是否有SSH秘钥</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ls -al ~/.ssh</div></pre></td></tr></table></figure>
+<h4 id="新建SSH-秘钥目录"><a href="#新建SSH-秘钥目录" class="headerlink" title="新建SSH 秘钥目录"></a>新建SSH 秘钥目录</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">mkdir ~/.ssh</div></pre></td></tr></table></figure>
+<h4 id="进入SSH秘钥目录"><a href="#进入SSH秘钥目录" class="headerlink" title="进入SSH秘钥目录"></a>进入SSH秘钥目录</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">cd</span> ~/.ssh</div></pre></td></tr></table></figure>
+<h4 id="生成秘钥如果有多个GIT"><a href="#生成秘钥如果有多个GIT" class="headerlink" title="生成秘钥如果有多个GIT"></a>生成秘钥如果有多个GIT</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">ssh-keygen -t rsa -C <span class="string">"419905457@qq.com"</span> -f ~/.ssh/github</div><div class="line">ssh-keygen -t rsa -C <span class="string">"419905457@qq.com"</span> -f ~/.ssh/gitcafe</div></pre></td></tr></table></figure>
+<p>这将在 ~/.ssh/ 目录下生成 github 和 github.pub 文件，记住千万不要把私钥文件 github 透露给任何人。</p>
+<p>这将在 ~/.ssh/ 目录下生成 gitcafe 和 gitcafe.pub 文件，记住千万不要把私钥文件 gitcafe 透露给任何人。</p>
+<h4 id="如果同时使用多个秘钥"><a href="#如果同时使用多个秘钥" class="headerlink" title="如果同时使用多个秘钥"></a>如果同时使用多个秘钥</h4><p>在 SSH 用户配置文件 ~/.ssh/config 中指定对应服务所使用的公秘钥名称</p>
+<p>如果没有 config 文件的话就新建一个：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">touch ~/.ssh/config</div></pre></td></tr></table></figure>
+<p>并输入以下内容，多个GIT可叠加：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">Host gitcafe.com www.gitcafe.com</div><div class="line">IdentityFile ~/.ssh/gitcafe</div><div class="line">Host github.com www.github.com</div><div class="line">IdentityFile ~/.ssh/github</div></pre></td></tr></table></figure></p>
+<h4 id="添加-github-pub-中的内容到-Github-网站"><a href="#添加-github-pub-中的内容到-Github-网站" class="headerlink" title="添加 github.pub 中的内容到 Github 网站"></a>添加 github.pub 中的内容到 Github 网站</h4><p>settings<br>SSH keys<br>Add SSH Keys<br>在 Title 文本框中输入任意字符，<br>在 Key 文本框粘贴刚才复制的公钥字符串<br>按Add SSH按钮完成操作</p>
+<h4 id="测试连接"><a href="#测试连接" class="headerlink" title="测试连接"></a>测试连接</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ssh -T git@github.com</div></pre></td></tr></table></figure>
+<p>成功的话会出现：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">Hi vinyo! You<span class="string">'ve successfully authenticated, but GitHub does not provide shell a</span></div><div class="line"><span class="string">ccess.</span></div></pre></td></tr></table></figure>
+<h4 id="github创建新项目"><a href="#github创建新项目" class="headerlink" title="github创建新项目"></a>github创建新项目</h4><p>点网站右上角加号New repository<br>Repository name项目名称为vinyo.github.io跟用户名相同后面官方后缀<br>例如：<br>vinyo.github.io<br>create repository创建</p>
+<h4 id="GIT全局设置"><a href="#GIT全局设置" class="headerlink" title="GIT全局设置"></a>GIT全局设置</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">git config --global user.name <span class="string">'vinyo'</span></div><div class="line">git config --global user.email <span class="string">'419905457@qq.com'</span></div></pre></td></tr></table></figure>
+<h4 id="域名配置"><a href="#域名配置" class="headerlink" title="域名配置"></a>域名配置</h4><p>source目录新建文件CNAME写上域名:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">kaliwifi.com</div></pre></td></tr></table></figure>
+<p>将dnspod管理的域名解析到github博客域名：</p>
+<p>第一种方法<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">@  CNAME vinyou.github.io</div><div class="line">www CNAME vinyou.github.io</div></pre></td></tr></table></figure></p>
+<p>第二种方法<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">@ A 192.30.252.153</div><div class="line">WWW A 192.30.252.153</div></pre></td></tr></table></figure></p>
+<p>备用IP或者ping博客vinyo.github.com得到的IP进行解析。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">192.30.252.154</div></pre></td></tr></table></figure></p>
+<p>dnspod支持域名解析均衡。</p>
+<h4 id="配置-config-yml"><a href="#配置-config-yml" class="headerlink" title="配置_config.yml"></a>配置_config.yml</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">deploy: </div><div class="line">  <span class="built_in">type</span>: git</div><div class="line">  repository: git@github.com:vinyo/vinyo.github.io.git</div></pre></td></tr></table></figure>
+<h4 id="生成静态"><a href="#生成静态" class="headerlink" title="生成静态"></a>生成静态</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">hexo g</div></pre></td></tr></table></figure>
+<p>如果出现错误执行以下清除文件命令或删除.deploy、public文件夹：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">hexo clean</div></pre></td></tr></table></figure>
+<h4 id="测试访问-http-localhost-4000"><a href="#测试访问-http-localhost-4000" class="headerlink" title="测试访问 http://localhost:4000/"></a>测试访问 <a href="http://localhost:4000/" target="_blank" rel="external">http://localhost:4000/</a></h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">hexo s</div></pre></td></tr></table></figure>
+<h4 id="上传到github"><a href="#上传到github" class="headerlink" title="上传到github"></a>上传到github</h4><p>安装扩展组件不然没上传到GITHUB的功能：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">npm install hexo-deployer-git --save</div><div class="line">hexo d</div></pre></td></tr></table></figure>
+<h4 id="以下备用命令"><a href="#以下备用命令" class="headerlink" title="以下备用命令"></a>以下备用命令</h4><p>查找本文件夹所有文件所包含的文本内容:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">grep -nr fonts.googleapis.com ./</div></pre></td></tr></table></figure>
+
+      
+    </div>
+    
+    
+    
+
+    
+      <div>
+        <div id="wechat_subscriber" style="display: block; padding: 10px 0; margin: 20px auto; width: 100%; text-align: center">
+    <img id="wechat_subscriber_qcode" src="http://wx2.sinaimg.cn/mw690/7423c57fgy1fjb2ib0de9j205k077jrt.jpg" alt="寻味漂漂 wechat" style="width: 200px; max-width: 100%;"/>
+    <div>加我微信好友，请长按或扫描上方微信二维码</div>
+</div>
+
+      </div>
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div>坚持原创技术分享，您的支持将鼓励我继续创作！</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>打赏</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="/images/alipay.jpg" alt="寻味漂漂 支付宝"/>
+        <p>支付宝</p>
+      </div>
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/GITHUB-HEXO博客搭建/" rel="tag"># GITHUB HEXO博客搭建</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/09/07/树梅派Raspberry-Pi-无线WIFI配置/" rel="prev" title="树梅派Raspberry Pi 无线WIFI配置">
+                树梅派Raspberry Pi 无线WIFI配置 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          
+            <img class="site-author-image" itemprop="image"
+              src="/images/avatar.png"
+              alt="寻味漂漂" />
+          
+            <p class="site-author-name" itemprop="name">寻味漂漂</p>
+            <p class="site-description motion-element" itemprop="description">不一样的存在，或许很简单</p>
+        </div>
+
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+            
+              <a href="/archives/">
+            
+                <span class="site-state-item-count">3</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">1</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">3</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="http://wpa.qq.com/msgrd?v=3&uin=419905457&site=qq&menu=yes" target="_blank" title="QQ">
+                  
+                    <i class="fa fa-fw fa-qq"></i>QQ</a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://wx2.sinaimg.cn/mw690/7423c57fgy1fjb2ib0de9j205k077jrt.jpg" target="_blank" title="微信">
+                  
+                    <i class="fa fa-fw fa-weixin"></i>微信</a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/vinyo" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>GitHub</a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="mailto:419905457@qq.com" target="_blank" title="E-Mail">
+                  
+                    <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#HEXO环境配置"><span class="nav-number">1.</span> <span class="nav-text">HEXO环境配置</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#下载需要安装的程序"><span class="nav-number">1.1.</span> <span class="nav-text">下载需要安装的程序</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安装HEXO"><span class="nav-number">1.2.</span> <span class="nav-text">安装HEXO</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#新建HEXO博客"><span class="nav-number">1.3.</span> <span class="nav-text">新建HEXO博客</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#配置GITHUB"><span class="nav-number">1.4.</span> <span class="nav-text">配置GITHUB</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#查看是否有SSH秘钥"><span class="nav-number">1.4.1.</span> <span class="nav-text">查看是否有SSH秘钥</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#新建SSH-秘钥目录"><span class="nav-number">1.4.2.</span> <span class="nav-text">新建SSH 秘钥目录</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#进入SSH秘钥目录"><span class="nav-number">1.4.3.</span> <span class="nav-text">进入SSH秘钥目录</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#生成秘钥如果有多个GIT"><span class="nav-number">1.4.4.</span> <span class="nav-text">生成秘钥如果有多个GIT</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#如果同时使用多个秘钥"><span class="nav-number">1.4.5.</span> <span class="nav-text">如果同时使用多个秘钥</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#添加-github-pub-中的内容到-Github-网站"><span class="nav-number">1.4.6.</span> <span class="nav-text">添加 github.pub 中的内容到 Github 网站</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#测试连接"><span class="nav-number">1.4.7.</span> <span class="nav-text">测试连接</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#github创建新项目"><span class="nav-number">1.4.8.</span> <span class="nav-text">github创建新项目</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#GIT全局设置"><span class="nav-number">1.4.9.</span> <span class="nav-text">GIT全局设置</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#域名配置"><span class="nav-number">1.4.10.</span> <span class="nav-text">域名配置</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#配置-config-yml"><span class="nav-number">1.4.11.</span> <span class="nav-text">配置_config.yml</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#生成静态"><span class="nav-number">1.4.12.</span> <span class="nav-text">生成静态</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#测试访问-http-localhost-4000"><span class="nav-number">1.4.13.</span> <span class="nav-text">测试访问 http://localhost:4000/</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#上传到github"><span class="nav-number">1.4.14.</span> <span class="nav-text">上传到github</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#以下备用命令"><span class="nav-number">1.4.15.</span> <span class="nav-text">以下备用命令</span></a></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy;  2015 &mdash; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">寻味漂漂</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+  <span class="post-meta-divider">|</span>
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a> v5.1.2</div>
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.2"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.2"></script>
+
+
+
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

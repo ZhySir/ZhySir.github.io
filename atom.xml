@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Linux 运维</title>
+  <subtitle>服务器故障解决</subtitle>
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="http://kaliwifi.com/"/>
+  <updated>2017-09-16T05:01:35.501Z</updated>
+  <id>http://kaliwifi.com/</id>
+  
+  <author>
+    <name>寻味漂漂</name>
+    
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>kali C118 GSM Sniffer</title>
+    <link href="http://kaliwifi.com/2017/09/16/kali-C118-GSM-Sniffer/"/>
+    <id>http://kaliwifi.com/2017/09/16/kali-C118-GSM-Sniffer/</id>
+    <published>2017-09-16T04:52:48.000Z</published>
+    <updated>2017-09-16T05:01:35.501Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="kali-C118-GSM-Sniffer"><a href="#kali-C118-GSM-Sniffer" class="headerlink" title="kali C118 GSM Sniffer"></a>kali C118 GSM Sniffer</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div></pre></td><td class="code"><pre><div class="line">nano /etc/apt/sources.list</div><div class="line"></div><div class="line">deb http://archive-6.kali.org/kali kali main non-free contrib</div><div class="line">deb-src http://archive-6.kali.org/kali kali main non-free contrib</div><div class="line">deb http://archive-6.kali.org/kali-security kali/updates main contrib non-free</div><div class="line">apt-get update</div><div class="line"><span class="variable">$aptitude</span> install libtool shtool autoconf git-core pkg-config make gcc</div><div class="line"><span class="variable">$apt</span>-get install build-essential libgmp3-dev libmpfr-dev libx11-6 libx11-dev texinfo flex bison libncurses5 \</div><div class="line">libncurses5-dbg libncurses5-dev libncursesw5 libncursesw5-dbg libncursesw5-dev zlibc zlib1g-dev libmpfr4 libmpc-dev</div><div class="line"><span class="variable">$wget</span> -c http://bb.osmocom.org/trac/raw-attachment/wiki/GnuArmToolchain/gnu-arm-build.2.sh</div><div class="line">$ chmod +x gnu-arm-build.2.sh</div><div class="line">$ mkdir build install src</div><div class="line">$ <span class="built_in">cd</span> src/</div><div class="line">$ wget http://ftp.gnu.org/gnu/gcc/gcc-4.5.2/gcc-4.5.2.tar.bz2</div><div class="line">$ wget http://ftp.gnu.org/gnu/binutils/binutils-2.21.1a.tar.bz2</div><div class="line">$ wget ftp://sources.redhat.com/pub/newlib/newlib-1.19.0.tar.gz</div><div class="line">$ <span class="built_in">cd</span> ..</div><div class="line">$ ./gnu-arm-build.2.sh </div><div class="line">I will build an arm-elf cross-compiler:</div><div class="line"></div><div class="line">  Prefix: &lt;YOURPATH&gt;/install</div><div class="line">  Sources: &lt;YOURPATH&gt;/src</div><div class="line">  Build files: &lt;YOURPATH&gt;/build</div><div class="line"></div><div class="line">Press ^C now <span class="keyword">if</span> you <span class="keyword">do</span> NOT want to <span class="keyword">do</span> this.</div><div class="line"><span class="built_in">export</span> PATH=<span class="variable">$PATH</span>:/root/install/bin</div><div class="line">git <span class="built_in">clone</span> git://git.osmocom.org/libosmocore.git</div><div class="line"></div><div class="line"><span class="built_in">cd</span> libosmocore/</div><div class="line">autoreconf -i</div><div class="line">./configure</div><div class="line">make</div><div class="line">sudo make install</div><div class="line"><span class="built_in">cd</span> ..</div><div class="line">git <span class="built_in">clone</span> git://git.osmocom.org/osmocom-bb.git</div><div class="line"><span class="built_in">cd</span> osmocom-bb</div><div class="line">git pull --rebase</div><div class="line"><span class="built_in">cd</span> src</div><div class="line">make</div></pre></td></tr></table></figure>
+<h3 id="新开窗口刷入C118"><a href="#新开窗口刷入C118" class="headerlink" title="新开窗口刷入C118"></a>新开窗口刷入C118</h3><pre><code class="bash"><span class="built_in">cd</span> ~/osmocom-bb/src/host/osmocon/
+./osmocon -m c123xor -p /dev/ttyUSB0 ../../target/firmware/board/compal_e88/layer1.compalram.bin
+</code></pre>
+<h3 id="新开窗口扫描基站"><a href="#新开窗口扫描基站" class="headerlink" title="新开窗口扫描基站"></a>新开窗口扫描基站</h3><pre><code class="bash"><span class="built_in">cd</span> ~/osmocom-bb/src/host/layer23/src/misc
+./cell_log -O
+ctrl+c
+</code></pre>
+<h3 id="新开窗口进行监听"><a href="#新开窗口进行监听" class="headerlink" title="新开窗口进行监听"></a>新开窗口进行监听</h3><pre><code class="bash">~/osmocom-bb/src/host/layer23/src/misc/ccch_scan -i 127.0.0.1 -a 频道
+</code></pre>
+<h3 id="新开窗口抓包过滤gsm-sms"><a href="#新开窗口抓包过滤gsm-sms" class="headerlink" title="新开窗口抓包过滤gsm_sms"></a>新开窗口抓包过滤gsm_sms</h3><pre><code class="bash">wireshark -k -i lo -f <span class="string">'port 4729'</span>
+</code></pre>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;kali-C118-GSM-Sniffer&quot;&gt;&lt;a href=&quot;#kali-C118-GSM-Sniffer&quot; class=&quot;headerlink&quot; title=&quot;kali C118 GSM Sniffer&quot;&gt;&lt;/a&gt;kali C118 GSM Sniffer&lt;/
+    
+    </summary>
+    
+      <category term="技术文章" scheme="http://kaliwifi.com/categories/%E6%8A%80%E6%9C%AF%E6%96%87%E7%AB%A0/"/>
+    
+    
+      <category term="kali C118 GSM Sniffer" scheme="http://kaliwifi.com/tags/kali-C118-GSM-Sniffer/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>树梅派Raspberry Pi 无线WIFI配置</title>
+    <link href="http://kaliwifi.com/2017/09/07/%E6%A0%91%E6%A2%85%E6%B4%BERaspberry-Pi-%E6%97%A0%E7%BA%BFWIFI%E9%85%8D%E7%BD%AE/"/>
+    <id>http://kaliwifi.com/2017/09/07/树梅派Raspberry-Pi-无线WIFI配置/</id>
+    <published>2017-09-07T01:47:30.000Z</published>
+    <updated>2017-09-16T05:07:54.501Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="配置无线网络"><a href="#配置无线网络" class="headerlink" title="配置无线网络"></a>配置无线网络</h2><h3 id="用编辑器nano打开interfaces文件"><a href="#用编辑器nano打开interfaces文件" class="headerlink" title="用编辑器nano打开interfaces文件"></a>用编辑器nano打开interfaces文件</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo nano /etc/network/interfaces</div></pre></td></tr></table></figure>
+<h4 id="尾部加入"><a href="#尾部加入" class="headerlink" title="尾部加入"></a>尾部加入</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">auto lo</div><div class="line"></div><div class="line">iface lo inet loopback</div><div class="line">iface eth0 inet dhcp</div><div class="line"></div><div class="line">allow-hotplug wlan0</div><div class="line">iface wlan0 inet manual</div><div class="line">wpa-roam /etc/wpa_supplicant/wpa_supplicant.conf</div><div class="line">iface default inet dhcp</div></pre></td></tr></table></figure>
+<a id="more"></a>
+<h3 id="用编辑器nano打开wpa-supplicant-confs文件"><a href="#用编辑器nano打开wpa-supplicant-confs文件" class="headerlink" title="用编辑器nano打开wpa_supplicant.confs文件"></a>用编辑器nano打开wpa_supplicant.confs文件</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo nano /etc/wpa_supplicant/wpa_supplicant.conf</div></pre></td></tr></table></figure>
+<h4 id="尾部加入-1"><a href="#尾部加入-1" class="headerlink" title="尾部加入"></a>尾部加入</h4><pre><code class="bash">network={
+ssid=<span class="string">"SSID-GOES-HERE"</span>
+proto=RSN
+key_mgmt=WPA-PSK
+pairwise=CCMP TKIP
+group=CCMP TKIP
+psk=<span class="string">"WIFI-PASSWORD-GOES-HERE"</span>
+}
+</code></pre>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;配置无线网络&quot;&gt;&lt;a href=&quot;#配置无线网络&quot; class=&quot;headerlink&quot; title=&quot;配置无线网络&quot;&gt;&lt;/a&gt;配置无线网络&lt;/h2&gt;&lt;h3 id=&quot;用编辑器nano打开interfaces文件&quot;&gt;&lt;a href=&quot;#用编辑器nano打开interfaces文件&quot; class=&quot;headerlink&quot; title=&quot;用编辑器nano打开interfaces文件&quot;&gt;&lt;/a&gt;用编辑器nano打开interfaces文件&lt;/h3&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;sudo nano /etc/network/interfaces&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h4 id=&quot;尾部加入&quot;&gt;&lt;a href=&quot;#尾部加入&quot; class=&quot;headerlink&quot; title=&quot;尾部加入&quot;&gt;&lt;/a&gt;尾部加入&lt;/h4&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;5&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;6&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;7&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;8&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;9&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;auto lo&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;iface lo inet loopback&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;iface eth0 inet dhcp&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;allow-hotplug wlan0&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;iface wlan0 inet manual&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;wpa-roam /etc/wpa_supplicant/wpa_supplicant.conf&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;iface default inet dhcp&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+    
+    </summary>
+    
+      <category term="技术文章" scheme="http://kaliwifi.com/categories/%E6%8A%80%E6%9C%AF%E6%96%87%E7%AB%A0/"/>
+    
+    
+      <category term="树梅派Raspberry Pi 无线WIFI配置" scheme="http://kaliwifi.com/tags/%E6%A0%91%E6%A2%85%E6%B4%BERaspberry-Pi-%E6%97%A0%E7%BA%BFWIFI%E9%85%8D%E7%BD%AE/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>GITHUB HEXO博客搭建</title>
+    <link href="http://kaliwifi.com/2017/08/07/GITHUB-HEXO%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/"/>
+    <id>http://kaliwifi.com/2017/08/07/GITHUB-HEXO博客搭建/</id>
+    <published>2017-08-07T04:11:22.000Z</published>
+    <updated>2017-09-16T05:07:43.388Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="HEXO环境配置"><a href="#HEXO环境配置" class="headerlink" title="HEXO环境配置"></a>HEXO环境配置</h2><p>hexo非常容易安装。然而，在你开始之前需要一些东西。</p>
+<h3 id="下载需要安装的程序"><a href="#下载需要安装的程序" class="headerlink" title="下载需要安装的程序"></a>下载需要安装的程序</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">http://nodejs.org/</div><div class="line">http://git-scm.com/</div></pre></td></tr></table></figure>
+<p>或许我们还需要一个UTF-8编码的编辑器，因为Editplus编辑的文件都要用utf-8保存。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">http://www.cnblogs.com/hanzisearcher/archive/2012/09/14/editplus.html</div></pre></td></tr></table></figure>
+<h3 id="安装HEXO"><a href="#安装HEXO" class="headerlink" title="安装HEXO"></a>安装HEXO</h3><p>桌面右击进入Git Bash：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install -g hexo</div></pre></td></tr></table></figure>
+<p>hexo一旦安装，运行下面的命令Hexo将建立所有你需要的文件，在目标文件夹。<br><a id="more"></a></p>
+<h3 id="新建HEXO博客"><a href="#新建HEXO博客" class="headerlink" title="新建HEXO博客"></a>新建HEXO博客</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">hexo init kaliwifi</div><div class="line"><span class="built_in">cd</span> kaliwifi</div><div class="line">npm install</div></pre></td></tr></table></figure>
+<p>经过建设，这里就是项目文件夹看起来像这样子：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">.</div><div class="line">├── _config.yml</div><div class="line">├── package.json</div><div class="line">├── scaffolds</div><div class="line">├── scripts</div><div class="line">├── <span class="built_in">source</span></div><div class="line">| ├── _drafts</div><div class="line">| └── _posts</div><div class="line">└── themes</div></pre></td></tr></table></figure>
+<h3 id="配置GITHUB"><a href="#配置GITHUB" class="headerlink" title="配置GITHUB"></a>配置GITHUB</h3><p>先到github网站注册帐号：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">https://github.com/</div></pre></td></tr></table></figure>
+<h4 id="查看是否有SSH秘钥"><a href="#查看是否有SSH秘钥" class="headerlink" title="查看是否有SSH秘钥"></a>查看是否有SSH秘钥</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ls -al ~/.ssh</div></pre></td></tr></table></figure>
+<h4 id="新建SSH-秘钥目录"><a href="#新建SSH-秘钥目录" class="headerlink" title="新建SSH 秘钥目录"></a>新建SSH 秘钥目录</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">mkdir ~/.ssh</div></pre></td></tr></table></figure>
+<h4 id="进入SSH秘钥目录"><a href="#进入SSH秘钥目录" class="headerlink" title="进入SSH秘钥目录"></a>进入SSH秘钥目录</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">cd</span> ~/.ssh</div></pre></td></tr></table></figure>
+<h4 id="生成秘钥如果有多个GIT"><a href="#生成秘钥如果有多个GIT" class="headerlink" title="生成秘钥如果有多个GIT"></a>生成秘钥如果有多个GIT</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">ssh-keygen -t rsa -C <span class="string">"419905457@qq.com"</span> -f ~/.ssh/github</div><div class="line">ssh-keygen -t rsa -C <span class="string">"419905457@qq.com"</span> -f ~/.ssh/gitcafe</div></pre></td></tr></table></figure>
+<p>这将在 ~/.ssh/ 目录下生成 github 和 github.pub 文件，记住千万不要把私钥文件 github 透露给任何人。</p>
+<p>这将在 ~/.ssh/ 目录下生成 gitcafe 和 gitcafe.pub 文件，记住千万不要把私钥文件 gitcafe 透露给任何人。</p>
+<h4 id="如果同时使用多个秘钥"><a href="#如果同时使用多个秘钥" class="headerlink" title="如果同时使用多个秘钥"></a>如果同时使用多个秘钥</h4><p>在 SSH 用户配置文件 ~/.ssh/config 中指定对应服务所使用的公秘钥名称</p>
+<p>如果没有 config 文件的话就新建一个：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">touch ~/.ssh/config</div></pre></td></tr></table></figure>
+<p>并输入以下内容，多个GIT可叠加：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">Host gitcafe.com www.gitcafe.com</div><div class="line">IdentityFile ~/.ssh/gitcafe</div><div class="line">Host github.com www.github.com</div><div class="line">IdentityFile ~/.ssh/github</div></pre></td></tr></table></figure></p>
+<h4 id="添加-github-pub-中的内容到-Github-网站"><a href="#添加-github-pub-中的内容到-Github-网站" class="headerlink" title="添加 github.pub 中的内容到 Github 网站"></a>添加 github.pub 中的内容到 Github 网站</h4><p>settings<br>SSH keys<br>Add SSH Keys<br>在 Title 文本框中输入任意字符，<br>在 Key 文本框粘贴刚才复制的公钥字符串<br>按Add SSH按钮完成操作</p>
+<h4 id="测试连接"><a href="#测试连接" class="headerlink" title="测试连接"></a>测试连接</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ssh -T git@github.com</div></pre></td></tr></table></figure>
+<p>成功的话会出现：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">Hi vinyo! You<span class="string">'ve successfully authenticated, but GitHub does not provide shell a</span></div><div class="line"><span class="string">ccess.</span></div></pre></td></tr></table></figure>
+<h4 id="github创建新项目"><a href="#github创建新项目" class="headerlink" title="github创建新项目"></a>github创建新项目</h4><p>点网站右上角加号New repository<br>Repository name项目名称为vinyo.github.io跟用户名相同后面官方后缀<br>例如：<br>vinyo.github.io<br>create repository创建</p>
+<h4 id="GIT全局设置"><a href="#GIT全局设置" class="headerlink" title="GIT全局设置"></a>GIT全局设置</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">git config --global user.name <span class="string">'vinyo'</span></div><div class="line">git config --global user.email <span class="string">'419905457@qq.com'</span></div></pre></td></tr></table></figure>
+<h4 id="域名配置"><a href="#域名配置" class="headerlink" title="域名配置"></a>域名配置</h4><p>source目录新建文件CNAME写上域名:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">kaliwifi.com</div></pre></td></tr></table></figure>
+<p>将dnspod管理的域名解析到github博客域名：</p>
+<p>第一种方法<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">@  CNAME vinyou.github.io</div><div class="line">www CNAME vinyou.github.io</div></pre></td></tr></table></figure></p>
+<p>第二种方法<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">@ A 192.30.252.153</div><div class="line">WWW A 192.30.252.153</div></pre></td></tr></table></figure></p>
+<p>备用IP或者ping博客vinyo.github.com得到的IP进行解析。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">192.30.252.154</div></pre></td></tr></table></figure></p>
+<p>dnspod支持域名解析均衡。</p>
+<h4 id="配置-config-yml"><a href="#配置-config-yml" class="headerlink" title="配置_config.yml"></a>配置_config.yml</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">deploy: </div><div class="line">  <span class="built_in">type</span>: git</div><div class="line">  repository: git@github.com:vinyo/vinyo.github.io.git</div></pre></td></tr></table></figure>
+<h4 id="生成静态"><a href="#生成静态" class="headerlink" title="生成静态"></a>生成静态</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">hexo g</div></pre></td></tr></table></figure>
+<p>如果出现错误执行以下清除文件命令或删除.deploy、public文件夹：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">hexo clean</div></pre></td></tr></table></figure>
+<h4 id="测试访问-http-localhost-4000"><a href="#测试访问-http-localhost-4000" class="headerlink" title="测试访问 http://localhost:4000/"></a>测试访问 <a href="http://localhost:4000/" target="_blank" rel="external">http://localhost:4000/</a></h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">hexo s</div></pre></td></tr></table></figure>
+<h4 id="上传到github"><a href="#上传到github" class="headerlink" title="上传到github"></a>上传到github</h4><p>安装扩展组件不然没上传到GITHUB的功能：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">npm install hexo-deployer-git --save</div><div class="line">hexo d</div></pre></td></tr></table></figure>
+<h4 id="以下备用命令"><a href="#以下备用命令" class="headerlink" title="以下备用命令"></a>以下备用命令</h4><p>查找本文件夹所有文件所包含的文本内容:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">grep -nr fonts.googleapis.com ./</div></pre></td></tr></table></figure>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;HEXO环境配置&quot;&gt;&lt;a href=&quot;#HEXO环境配置&quot; class=&quot;headerlink&quot; title=&quot;HEXO环境配置&quot;&gt;&lt;/a&gt;HEXO环境配置&lt;/h2&gt;&lt;p&gt;hexo非常容易安装。然而，在你开始之前需要一些东西。&lt;/p&gt;
+&lt;h3 id=&quot;下载需要安装的程序&quot;&gt;&lt;a href=&quot;#下载需要安装的程序&quot; class=&quot;headerlink&quot; title=&quot;下载需要安装的程序&quot;&gt;&lt;/a&gt;下载需要安装的程序&lt;/h3&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;http://nodejs.org/&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;http://git-scm.com/&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;或许我们还需要一个UTF-8编码的编辑器，因为Editplus编辑的文件都要用utf-8保存。&lt;/p&gt;
+&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;http://www.cnblogs.com/hanzisearcher/archive/2012/09/14/editplus.html&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h3 id=&quot;安装HEXO&quot;&gt;&lt;a href=&quot;#安装HEXO&quot; class=&quot;headerlink&quot; title=&quot;安装HEXO&quot;&gt;&lt;/a&gt;安装HEXO&lt;/h3&gt;&lt;p&gt;桌面右击进入Git Bash：&lt;/p&gt;
+&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;npm install -g hexo&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;hexo一旦安装，运行下面的命令Hexo将建立所有你需要的文件，在目标文件夹。&lt;br&gt;
+    
+    </summary>
+    
+      <category term="技术文章" scheme="http://kaliwifi.com/categories/%E6%8A%80%E6%9C%AF%E6%96%87%E7%AB%A0/"/>
+    
+    
+      <category term="GITHUB HEXO博客搭建" scheme="http://kaliwifi.com/tags/GITHUB-HEXO%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/"/>
+    
+  </entry>
+  
+</feed>
