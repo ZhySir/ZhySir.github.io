@@ -3010,7 +3010,7 @@ pre .javascript .function {
 }
 .links-of-author-item {
   margin: 5px 0 0;
-  width: 50%;
+  /*width: 50%;*/
 }
 .links-of-author-item a {
   max-width: 216px;
@@ -3104,4 +3104,9 @@ pre .javascript .function {
 }
 .footer {
   bottom: auto;
+}
+
+.post-body h2 {
+  font-size: 1.45em;
+  border-bottom: 1px solid #eee;
 }
