@@ -85,7 +85,7 @@
 
 
 
-  <link rel="alternate" href="/atom.xml" title="Linux 运维" type="application/atom+xml" />
+  <link rel="alternate" href="/atom.xml" title="ZhySir" type="application/atom+xml" />
 
 
 
@@ -97,16 +97,16 @@
 
 
 
-<meta name="description" content="不一样的存在，或许很简单">
+<meta name="description" content="明人不说暗话">
 <meta property="og:type" content="website">
-<meta property="og:title" content="Linux 运维">
-<meta property="og:url" content="http://kaliwifi.com/index.html">
-<meta property="og:site_name" content="Linux 运维">
-<meta property="og:description" content="不一样的存在，或许很简单">
+<meta property="og:title" content="ZhySir">
+<meta property="og:url" content="https://zhysir.github.io/index.html">
+<meta property="og:site_name" content="ZhySir">
+<meta property="og:description" content="明人不说暗话">
 <meta property="og:locale" content="zh-Hans">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Linux 运维">
-<meta name="twitter:description" content="不一样的存在，或许很简单">
+<meta name="twitter:title" content="ZhySir">
+<meta name="twitter:description" content="明人不说暗话">
 
 
 
@@ -136,13 +136,13 @@
 
 
 
-  <link rel="canonical" href="http://kaliwifi.com/"/>
+  <link rel="canonical" href="https://zhysir.github.io/"/>
 
 
 
 
 
-  <title>Linux 运维</title>
+  <title>ZhySir</title>
   
 
 
@@ -183,12 +183,12 @@
     <div class="custom-logo-site-title">
       <a href="/"  class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
-        <span class="site-title">Linux 运维</span>
+        <span class="site-title">ZhySir Blog</span>
         <span class="logo-line-after"><i></i></span>
       </a>
     </div>
       
-        <p class="site-subtitle">服务器故障解决</p>
+        <p class="site-subtitle">Android Developer</p>
       
   </div>
 
@@ -276,9 +276,6 @@
           <div id="content" class="content">
             
   <section id="posts" class="posts-expand">
-    
-      
-
   
 
   
@@ -290,316 +287,16 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://kaliwifi.com/2017/09/16/kali-C118-GSM-Sniffer/">
+    <link itemprop="mainEntityOfPage" href="https://zhysir.github.io/2017/08/07/GITHUB-HEXO博客搭建/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="寻味漂漂">
+      <meta itemprop="name" content="ZhySir">
       <meta itemprop="description" content="">
       <meta itemprop="image" content="/images/avatar.png">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Linux 运维">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/09/16/kali-C118-GSM-Sniffer/" itemprop="url">kali C118 GSM Sniffer</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-09-16T12:52:48+08:00">
-                2017-09-16
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/技术文章/" itemprop="url" rel="index">
-                    <span itemprop="name">技术文章</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h2 id="kali-C118-GSM-Sniffer"><a href="#kali-C118-GSM-Sniffer" class="headerlink" title="kali C118 GSM Sniffer"></a>kali C118 GSM Sniffer</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div></pre></td><td class="code"><pre><div class="line">nano /etc/apt/sources.list</div><div class="line"></div><div class="line">deb http://archive-6.kali.org/kali kali main non-free contrib</div><div class="line">deb-src http://archive-6.kali.org/kali kali main non-free contrib</div><div class="line">deb http://archive-6.kali.org/kali-security kali/updates main contrib non-free</div><div class="line">apt-get update</div><div class="line"><span class="variable">$aptitude</span> install libtool shtool autoconf git-core pkg-config make gcc</div><div class="line"><span class="variable">$apt</span>-get install build-essential libgmp3-dev libmpfr-dev libx11-6 libx11-dev texinfo flex bison libncurses5 \</div><div class="line">libncurses5-dbg libncurses5-dev libncursesw5 libncursesw5-dbg libncursesw5-dev zlibc zlib1g-dev libmpfr4 libmpc-dev</div><div class="line"><span class="variable">$wget</span> -c http://bb.osmocom.org/trac/raw-attachment/wiki/GnuArmToolchain/gnu-arm-build.2.sh</div><div class="line">$ chmod +x gnu-arm-build.2.sh</div><div class="line">$ mkdir build install src</div><div class="line">$ <span class="built_in">cd</span> src/</div><div class="line">$ wget http://ftp.gnu.org/gnu/gcc/gcc-4.5.2/gcc-4.5.2.tar.bz2</div><div class="line">$ wget http://ftp.gnu.org/gnu/binutils/binutils-2.21.1a.tar.bz2</div><div class="line">$ wget ftp://sources.redhat.com/pub/newlib/newlib-1.19.0.tar.gz</div><div class="line">$ <span class="built_in">cd</span> ..</div><div class="line">$ ./gnu-arm-build.2.sh </div><div class="line">I will build an arm-elf cross-compiler:</div><div class="line"></div><div class="line">  Prefix: &lt;YOURPATH&gt;/install</div><div class="line">  Sources: &lt;YOURPATH&gt;/src</div><div class="line">  Build files: &lt;YOURPATH&gt;/build</div><div class="line"></div><div class="line">Press ^C now <span class="keyword">if</span> you <span class="keyword">do</span> NOT want to <span class="keyword">do</span> this.</div><div class="line"><span class="built_in">export</span> PATH=<span class="variable">$PATH</span>:/root/install/bin</div><div class="line">git <span class="built_in">clone</span> git://git.osmocom.org/libosmocore.git</div><div class="line"></div><div class="line"><span class="built_in">cd</span> libosmocore/</div><div class="line">autoreconf -i</div><div class="line">./configure</div><div class="line">make</div><div class="line">sudo make install</div><div class="line"><span class="built_in">cd</span> ..</div><div class="line">git <span class="built_in">clone</span> git://git.osmocom.org/osmocom-bb.git</div><div class="line"><span class="built_in">cd</span> osmocom-bb</div><div class="line">git pull --rebase</div><div class="line"><span class="built_in">cd</span> src</div><div class="line">make</div></pre></td></tr></table></figure>
-<h3 id="新开窗口刷入C118"><a href="#新开窗口刷入C118" class="headerlink" title="新开窗口刷入C118"></a>新开窗口刷入C118</h3><pre><code class="bash"><span class="built_in">cd</span> ~/osmocom-bb/src/host/osmocon/
-./osmocon -m c123xor -p /dev/ttyUSB0 ../../target/firmware/board/compal_e88/layer1.compalram.bin
-</code></pre>
-<h3 id="新开窗口扫描基站"><a href="#新开窗口扫描基站" class="headerlink" title="新开窗口扫描基站"></a>新开窗口扫描基站</h3><pre><code class="bash"><span class="built_in">cd</span> ~/osmocom-bb/src/host/layer23/src/misc
-./cell_log -O
-ctrl+c
-</code></pre>
-<h3 id="新开窗口进行监听"><a href="#新开窗口进行监听" class="headerlink" title="新开窗口进行监听"></a>新开窗口进行监听</h3><pre><code class="bash">~/osmocom-bb/src/host/layer23/src/misc/ccch_scan -i 127.0.0.1 -a 频道
-</code></pre>
-<h3 id="新开窗口抓包过滤gsm-sms"><a href="#新开窗口抓包过滤gsm-sms" class="headerlink" title="新开窗口抓包过滤gsm_sms"></a>新开窗口抓包过滤gsm_sms</h3><pre><code class="bash">wireshark -k -i lo -f <span class="string">'port 4729'</span>
-</code></pre>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://kaliwifi.com/2017/09/07/树梅派Raspberry-Pi-无线WIFI配置/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="寻味漂漂">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Linux 运维">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/09/07/树梅派Raspberry-Pi-无线WIFI配置/" itemprop="url">树梅派Raspberry Pi 无线WIFI配置</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-09-07T09:47:30+08:00">
-                2017-09-07
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/技术文章/" itemprop="url" rel="index">
-                    <span itemprop="name">技术文章</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <h2 id="配置无线网络"><a href="#配置无线网络" class="headerlink" title="配置无线网络"></a>配置无线网络</h2><h3 id="用编辑器nano打开interfaces文件"><a href="#用编辑器nano打开interfaces文件" class="headerlink" title="用编辑器nano打开interfaces文件"></a>用编辑器nano打开interfaces文件</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo nano /etc/network/interfaces</div></pre></td></tr></table></figure>
-<h4 id="尾部加入"><a href="#尾部加入" class="headerlink" title="尾部加入"></a>尾部加入</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">auto lo</div><div class="line"></div><div class="line">iface lo inet loopback</div><div class="line">iface eth0 inet dhcp</div><div class="line"></div><div class="line">allow-hotplug wlan0</div><div class="line">iface wlan0 inet manual</div><div class="line">wpa-roam /etc/wpa_supplicant/wpa_supplicant.conf</div><div class="line">iface default inet dhcp</div></pre></td></tr></table></figure>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2017/09/07/树梅派Raspberry-Pi-无线WIFI配置/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://kaliwifi.com/2017/08/07/GITHUB-HEXO博客搭建/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="寻味漂漂">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Linux 运维">
+      <meta itemprop="name" content="ZhySir">
     </span>
 
     
@@ -621,8 +318,8 @@ ctrl+c
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-08-07T12:11:22+08:00">
-                2017-08-07
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-12-25T12:11:22+08:00">
+                2018-12-25
               </time>
             
 
@@ -765,10 +462,10 @@ ctrl+c
           
             <img class="site-author-image" itemprop="image"
               src="/images/avatar.png"
-              alt="寻味漂漂" />
+              alt="ZhySir" />
           
-            <p class="site-author-name" itemprop="name">寻味漂漂</p>
-            <p class="site-description motion-element" itemprop="description">不一样的存在，或许很简单</p>
+            <p class="site-author-name" itemprop="name">ZhySir</p>
+            <p class="site-description motion-element" itemprop="description">明人不说暗话</p>
         </div>
 
         <nav class="site-state motion-element">
@@ -778,7 +475,7 @@ ctrl+c
             
               <a href="/archives/">
             
-                <span class="site-state-item-count">3</span>
+                <span class="site-state-item-count">1</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -800,7 +497,7 @@ ctrl+c
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">3</span>
+                <span class="site-state-item-count">1</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -821,25 +518,25 @@ ctrl+c
           
             
               <span class="links-of-author-item">
-                <a href="http://wpa.qq.com/msgrd?v=3&uin=419905457&site=qq&menu=yes" target="_blank" title="QQ">
+                <a href="http://wpa.qq.com/msgrd?v=3&uin=916859568&site=qq&menu=yes" target="_blank" title="QQ">
                   
                     <i class="fa fa-fw fa-qq"></i>QQ</a>
               </span>
             
               <span class="links-of-author-item">
-                <a href="http://wx2.sinaimg.cn/mw690/7423c57fgy1fjb2ib0de9j205k077jrt.jpg" target="_blank" title="微信">
+                <a href="http://wx2.sinaimg.cn/mw690/7423c57fgy1fjb2ib0de9j205k077jrt.jpg" target="_blank" title="WeChat">
                   
-                    <i class="fa fa-fw fa-weixin"></i>微信</a>
+                    <i class="fa fa-fw fa-weixin"></i>WeChat</a>
               </span>
             
               <span class="links-of-author-item">
-                <a href="https://github.com/vinyo" target="_blank" title="GitHub">
+                <a href="https://github.com/ZhySir" target="_blank" title="GitHub">
                   
                     <i class="fa fa-fw fa-github"></i>GitHub</a>
               </span>
             
               <span class="links-of-author-item">
-                <a href="mailto:419905457@qq.com" target="_blank" title="E-Mail">
+                <a href="mailto:916859568@qq.com" target="_blank" title="E-Mail">
                   
                     <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
               </span>
@@ -875,11 +572,11 @@ ctrl+c
         <div class="copyright" >
   
   &copy;  2015 &mdash; 
-  <span itemprop="copyrightYear">2017</span>
+  <span itemprop="copyrightYear">2019</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>
-  <span class="author" itemprop="copyrightHolder">寻味漂漂</span>
+  <span class="author" itemprop="copyrightHolder">ZhySir</span>
 
   
 </div>

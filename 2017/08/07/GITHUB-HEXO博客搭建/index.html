@@ -85,7 +85,7 @@
 
 
 
-  <link rel="alternate" href="/atom.xml" title="Linux 运维" type="application/atom+xml" />
+  <link rel="alternate" href="/atom.xml" title="ZhySir" type="application/atom+xml" />
 
 
 
@@ -101,11 +101,11 @@
 <meta name="keywords" content="GITHUB HEXO博客搭建">
 <meta property="og:type" content="article">
 <meta property="og:title" content="GITHUB HEXO博客搭建">
-<meta property="og:url" content="http://kaliwifi.com/2017/08/07/GITHUB-HEXO博客搭建/index.html">
-<meta property="og:site_name" content="Linux 运维">
+<meta property="og:url" content="https://zhysir.github.io/2017/08/07/GITHUB-HEXO博客搭建/index.html">
+<meta property="og:site_name" content="ZhySir">
 <meta property="og:description" content="HEXO环境配置hexo非常容易安装。然而，在你开始之前需要一些东西。 下载需要安装的程序12http://nodejs.org/http://git-scm.com/ 或许我们还需要一个UTF-8编码的编辑器，因为Editplus编辑的文件都要用utf-8保存。 1http://www.cnblogs.com/hanzisearcher/archive/2012/09/14/editplus.h">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-09-16T05:07:43.388Z">
+<meta property="og:updated_time" content="2018-12-25T05:07:43.388Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="GITHUB HEXO博客搭建">
 <meta name="twitter:description" content="HEXO环境配置hexo非常容易安装。然而，在你开始之前需要一些东西。 下载需要安装的程序12http://nodejs.org/http://git-scm.com/ 或许我们还需要一个UTF-8编码的编辑器，因为Editplus编辑的文件都要用utf-8保存。 1http://www.cnblogs.com/hanzisearcher/archive/2012/09/14/editplus.h">
@@ -138,13 +138,13 @@
 
 
 
-  <link rel="canonical" href="http://kaliwifi.com/2017/08/07/GITHUB-HEXO博客搭建/"/>
+  <link rel="canonical" href="https://zhysir.github.io/2017/08/07/GITHUB-HEXO博客搭建/"/>
 
 
 
 
 
-  <title>GITHUB HEXO博客搭建 | Linux 运维</title>
+  <title>GITHUB HEXO博客搭建 | ZhySir</title>
   
 
 
@@ -184,12 +184,12 @@
     <div class="custom-logo-site-title">
       <a href="/"  class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
-        <span class="site-title">Linux 运维</span>
+        <span class="site-title">ZhySir Blog</span>
         <span class="logo-line-after"><i></i></span>
       </a>
     </div>
       
-        <p class="site-subtitle">服务器故障解决</p>
+        <p class="site-subtitle">Android Developer</p>
       
   </div>
 
@@ -291,16 +291,16 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://kaliwifi.com/2017/08/07/GITHUB-HEXO博客搭建/">
+    <link itemprop="mainEntityOfPage" href="https://zhysir.github.io/2017/08/07/GITHUB-HEXO博客搭建/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="寻味漂漂">
+      <meta itemprop="name" content="ZhySir">
       <meta itemprop="description" content="">
       <meta itemprop="image" content="/images/avatar.png">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Linux 运维">
+      <meta itemprop="name" content="ZhySir">
     </span>
 
     
@@ -320,8 +320,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-08-07T12:11:22+08:00">
-                2017-08-07
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-12-25T12:11:22+08:00">
+                2018-12-25
               </time>
             
 
@@ -395,7 +395,7 @@
 <h4 id="查看是否有SSH秘钥"><a href="#查看是否有SSH秘钥" class="headerlink" title="查看是否有SSH秘钥"></a>查看是否有SSH秘钥</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ls -al ~/.ssh</div></pre></td></tr></table></figure>
 <h4 id="新建SSH-秘钥目录"><a href="#新建SSH-秘钥目录" class="headerlink" title="新建SSH 秘钥目录"></a>新建SSH 秘钥目录</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">mkdir ~/.ssh</div></pre></td></tr></table></figure>
 <h4 id="进入SSH秘钥目录"><a href="#进入SSH秘钥目录" class="headerlink" title="进入SSH秘钥目录"></a>进入SSH秘钥目录</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">cd</span> ~/.ssh</div></pre></td></tr></table></figure>
-<h4 id="生成秘钥如果有多个GIT"><a href="#生成秘钥如果有多个GIT" class="headerlink" title="生成秘钥如果有多个GIT"></a>生成秘钥如果有多个GIT</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">ssh-keygen -t rsa -C <span class="string">"419905457@qq.com"</span> -f ~/.ssh/github</div><div class="line">ssh-keygen -t rsa -C <span class="string">"419905457@qq.com"</span> -f ~/.ssh/gitcafe</div></pre></td></tr></table></figure>
+<h4 id="生成秘钥如果有多个GIT"><a href="#生成秘钥如果有多个GIT" class="headerlink" title="生成秘钥如果有多个GIT"></a>生成秘钥如果有多个GIT</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">ssh-keygen -t rsa -C <span class="string">"916859568@qq.com"</span> -f ~/.ssh/github</div><div class="line">ssh-keygen -t rsa -C <span class="string">"916859568@qq.com"</span> -f ~/.ssh/gitcafe</div></pre></td></tr></table></figure>
 <p>这将在 ~/.ssh/ 目录下生成 github 和 github.pub 文件，记住千万不要把私钥文件 github 透露给任何人。</p>
 <p>这将在 ~/.ssh/ 目录下生成 gitcafe 和 gitcafe.pub 文件，记住千万不要把私钥文件 gitcafe 透露给任何人。</p>
 <h4 id="如果同时使用多个秘钥"><a href="#如果同时使用多个秘钥" class="headerlink" title="如果同时使用多个秘钥"></a>如果同时使用多个秘钥</h4><p>在 SSH 用户配置文件 ~/.ssh/config 中指定对应服务所使用的公秘钥名称</p>
@@ -405,17 +405,17 @@
 <h4 id="添加-github-pub-中的内容到-Github-网站"><a href="#添加-github-pub-中的内容到-Github-网站" class="headerlink" title="添加 github.pub 中的内容到 Github 网站"></a>添加 github.pub 中的内容到 Github 网站</h4><p>settings<br>SSH keys<br>Add SSH Keys<br>在 Title 文本框中输入任意字符，<br>在 Key 文本框粘贴刚才复制的公钥字符串<br>按Add SSH按钮完成操作</p>
 <h4 id="测试连接"><a href="#测试连接" class="headerlink" title="测试连接"></a>测试连接</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ssh -T git@github.com</div></pre></td></tr></table></figure>
 <p>成功的话会出现：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">Hi vinyo! You<span class="string">'ve successfully authenticated, but GitHub does not provide shell a</span></div><div class="line"><span class="string">ccess.</span></div></pre></td></tr></table></figure>
-<h4 id="github创建新项目"><a href="#github创建新项目" class="headerlink" title="github创建新项目"></a>github创建新项目</h4><p>点网站右上角加号New repository<br>Repository name项目名称为vinyo.github.io跟用户名相同后面官方后缀<br>例如：<br>vinyo.github.io<br>create repository创建</p>
-<h4 id="GIT全局设置"><a href="#GIT全局设置" class="headerlink" title="GIT全局设置"></a>GIT全局设置</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">git config --global user.name <span class="string">'vinyo'</span></div><div class="line">git config --global user.email <span class="string">'419905457@qq.com'</span></div></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">Hi ZhySir! You<span class="string">'ve successfully authenticated, but GitHub does not provide shell a</span></div><div class="line"><span class="string">ccess.</span></div></pre></td></tr></table></figure>
+<h4 id="github创建新项目"><a href="#github创建新项目" class="headerlink" title="github创建新项目"></a>github创建新项目</h4><p>点网站右上角加号New repository<br>Repository name项目名称为ZhySir.github.io跟用户名相同后面官方后缀<br>例如：<br>ZhySir.github.io<br>create repository创建</p>
+<h4 id="GIT全局设置"><a href="#GIT全局设置" class="headerlink" title="GIT全局设置"></a>GIT全局设置</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">git config --global user.name <span class="string">'ZhySir'</span></div><div class="line">git config --global user.email <span class="string">'916859568@qq.com'</span></div></pre></td></tr></table></figure>
 <h4 id="域名配置"><a href="#域名配置" class="headerlink" title="域名配置"></a>域名配置</h4><p>source目录新建文件CNAME写上域名:</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">kaliwifi.com</div></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">zhysir.com</div></pre></td></tr></table></figure>
 <p>将dnspod管理的域名解析到github博客域名：</p>
-<p>第一种方法<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">@  CNAME vinyou.github.io</div><div class="line">www CNAME vinyou.github.io</div></pre></td></tr></table></figure></p>
+<p>第一种方法<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">@  CNAME ZhySir.github.io</div><div class="line">www CNAME ZhySir.github.io</div></pre></td></tr></table></figure></p>
 <p>第二种方法<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">@ A 192.30.252.153</div><div class="line">WWW A 192.30.252.153</div></pre></td></tr></table></figure></p>
-<p>备用IP或者ping博客vinyo.github.com得到的IP进行解析。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">192.30.252.154</div></pre></td></tr></table></figure></p>
+<p>备用IP或者ping博客ZhySir.github.com得到的IP进行解析。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">192.30.252.154</div></pre></td></tr></table></figure></p>
 <p>dnspod支持域名解析均衡。</p>
-<h4 id="配置-config-yml"><a href="#配置-config-yml" class="headerlink" title="配置_config.yml"></a>配置_config.yml</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">deploy: </div><div class="line">  <span class="built_in">type</span>: git</div><div class="line">  repository: git@github.com:vinyo/vinyo.github.io.git</div></pre></td></tr></table></figure>
+<h4 id="配置-config-yml"><a href="#配置-config-yml" class="headerlink" title="配置_config.yml"></a>配置_config.yml</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">deploy: </div><div class="line">  <span class="built_in">type</span>: git</div><div class="line">  repository: git@github.com:ZhySir/ZhySir.github.io.git</div></pre></td></tr></table></figure>
 <h4 id="生成静态"><a href="#生成静态" class="headerlink" title="生成静态"></a>生成静态</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">hexo g</div></pre></td></tr></table></figure>
 <p>如果出现错误执行以下清除文件命令或删除.deploy、public文件夹：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">hexo clean</div></pre></td></tr></table></figure>
@@ -432,13 +432,13 @@
     
 
     
-      <div>
+      <!-- <div>
         <div id="wechat_subscriber" style="display: block; padding: 10px 0; margin: 20px auto; width: 100%; text-align: center">
-    <img id="wechat_subscriber_qcode" src="http://wx2.sinaimg.cn/mw690/7423c57fgy1fjb2ib0de9j205k077jrt.jpg" alt="寻味漂漂 wechat" style="width: 200px; max-width: 100%;"/>
+    <img id="wechat_subscriber_qcode" src="http://wx2.sinaimg.cn/mw690/7423c57fgy1fjb2ib0de9j205k077jrt.jpg" alt="ZhySir wechat" style="width: 200px; max-width: 100%;"/>
     <div>加我微信好友，请长按或扫描上方微信二维码</div>
 </div>
 
-      </div>
+      </div> -->
     
 
     
@@ -454,7 +454,7 @@
 
     
       <div id="alipay" style="display: inline-block">
-        <img id="alipay_qr" src="/images/alipay.jpg" alt="寻味漂漂 支付宝"/>
+        <img id="alipay_qr" src="/images/alipay.jpg" alt="ZhySir 支付宝"/>
         <p>支付宝</p>
       </div>
     
@@ -490,13 +490,13 @@
 
           <span class="post-nav-divider"></span>
 
-          <div class="post-nav-prev post-nav-item">
+          <<!-- div class="post-nav-prev post-nav-item">
             
               <a href="/2017/09/07/树梅派Raspberry-Pi-无线WIFI配置/" rel="prev" title="树梅派Raspberry Pi 无线WIFI配置">
                 树梅派Raspberry Pi 无线WIFI配置 <i class="fa fa-chevron-right"></i>
               </a>
             
-          </div>
+          </div> -->
         </div>
       
 
@@ -561,10 +561,10 @@
           
             <img class="site-author-image" itemprop="image"
               src="/images/avatar.png"
-              alt="寻味漂漂" />
+              alt="ZhySir" />
           
-            <p class="site-author-name" itemprop="name">寻味漂漂</p>
-            <p class="site-description motion-element" itemprop="description">不一样的存在，或许很简单</p>
+            <p class="site-author-name" itemprop="name">ZhySir</p>
+            <p class="site-description motion-element" itemprop="description">明人不说暗话</p>
         </div>
 
         <nav class="site-state motion-element">
@@ -574,7 +574,7 @@
             
               <a href="/archives/">
             
-                <span class="site-state-item-count">3</span>
+                <span class="site-state-item-count">1</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -596,7 +596,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">3</span>
+                <span class="site-state-item-count">1</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -617,25 +617,25 @@
           
             
               <span class="links-of-author-item">
-                <a href="http://wpa.qq.com/msgrd?v=3&uin=419905457&site=qq&menu=yes" target="_blank" title="QQ">
+                <a href="http://wpa.qq.com/msgrd?v=3&uin=916859568&site=qq&menu=yes" target="_blank" title="QQ">
                   
                     <i class="fa fa-fw fa-qq"></i>QQ</a>
               </span>
             
               <span class="links-of-author-item">
-                <a href="http://wx2.sinaimg.cn/mw690/7423c57fgy1fjb2ib0de9j205k077jrt.jpg" target="_blank" title="微信">
+                <a href="http://wx2.sinaimg.cn/mw690/7423c57fgy1fjb2ib0de9j205k077jrt.jpg" target="_blank" title="WeChat">
                   
-                    <i class="fa fa-fw fa-weixin"></i>微信</a>
+                    <i class="fa fa-fw fa-weixin"></i>WeChat</a>
               </span>
             
               <span class="links-of-author-item">
-                <a href="https://github.com/vinyo" target="_blank" title="GitHub">
+                <a href="https://github.com/ZhySir" target="_blank" title="GitHub">
                   
                     <i class="fa fa-fw fa-github"></i>GitHub</a>
               </span>
             
               <span class="links-of-author-item">
-                <a href="mailto:419905457@qq.com" target="_blank" title="E-Mail">
+                <a href="mailto:916859568@qq.com" target="_blank" title="E-Mail">
                   
                     <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
               </span>
@@ -687,11 +687,11 @@
         <div class="copyright" >
   
   &copy;  2015 &mdash; 
-  <span itemprop="copyrightYear">2017</span>
+  <span itemprop="copyrightYear">2019</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>
-  <span class="author" itemprop="copyrightHolder">寻味漂漂</span>
+  <span class="author" itemprop="copyrightHolder">ZhySir</span>
 
   
 </div>
